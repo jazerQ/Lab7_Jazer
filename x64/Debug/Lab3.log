@@ -1,0 +1,9 @@
+﻿  Lab7Func.cpp
+C:\Users\ASUS\source\repos\Lab3\Lab3\Lab7Func.cpp(69,13): warning C4477: "scanf_s": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "1" имеет тип "size_t *"
+  C:\Users\ASUS\source\repos\Lab3\Lab3\Lab7Func.cpp(69,13):
+  рекомендуется использовать "%zd" в строке форматирования
+  
+C:\Users\ASUS\source\repos\Lab3\Lab3\Lab7Func.cpp(279,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\ASUS\source\repos\Lab3\Lab3\Lab7Func.cpp(288,11): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\ASUS\source\repos\Lab3\Lab3\Lab7Func.cpp(296,18): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  Lab3.vcxproj -> C:\Users\ASUS\source\repos\Lab3\x64\Debug\Lab3.exe
