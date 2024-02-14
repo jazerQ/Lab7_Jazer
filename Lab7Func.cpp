@@ -4,19 +4,19 @@
 #include <fstream>
 #include "string.h"
 #include <iostream>
-using namespace std; // Использование пространства имен std
+using namespace std; // Г€Г±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГҐ ГЇГ°Г®Г±ГІГ°Г Г­Г±ГІГўГ  ГЁГ¬ГҐГ­ std
 
 int cntNum(ULL num) {
     int numdigits = 0;
     while (num != 0) {
         num /= 10;
-        numdigits++; // Считаем количество цифр в числе num
+        numdigits++; // Г‘Г·ГЁГІГ ГҐГ¬ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¶ГЁГґГ° Гў Г·ГЁГ±Г«ГҐ num
     }
     return numdigits;
 }
 void createFile() {
     std::string fileName;
-    cout << "\nвведите название файла(txt) который хотите создать\n";
+    cout << "\nГўГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ ГґГ Г©Г«Г (txt) ГЄГ®ГІГ®Г°Г»Г© ГµГ®ГІГЁГІГҐ Г±Г®Г§Г¤Г ГІГј\n";
     cin >> fileName;
     ofstream MyFile(fileName + ".txt");
 }
@@ -106,7 +106,7 @@ void Print_XY_Tab(int x, int y, const char* strA, char* Tab, int cx, int cy)
         }
     }
 }
-// Функция для печати телефонного номера
+// Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГЇГҐГ·Г ГІГЁ ГІГҐГ«ГҐГґГ®Г­Г­Г®ГЈГ® Г­Г®Г¬ГҐГ°Г 
 void PrintPhoneNo(PhN_s* pPh)
 {
     printf("%c", pPh->Plus ? '+' : ' ');
@@ -114,26 +114,26 @@ void PrintPhoneNo(PhN_s* pPh)
 
 
 }
-// Функция для печати порядкового номера
+// Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГЇГҐГ·Г ГІГЁ ГЇГ®Г°ГїГ¤ГЄГ®ГўГ®ГЈГ® Г­Г®Г¬ГҐГ°Г 
 void PrintPorNo(PhBookRec_t& PhBookRec) {
-    printf("\t\t\t\t%d\n", PhBookRec.por); // Печатаем порядковый номер
+    printf("\t\t\t\t%d\n", PhBookRec.por); // ГЏГҐГ·Г ГІГ ГҐГ¬ ГЇГ®Г°ГїГ¤ГЄГ®ГўГ»Г© Г­Г®Г¬ГҐГ°
 }
-// Функция для печати записи в телефонной книге
+// Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГЇГҐГ·Г ГІГЁ Г§Г ГЇГЁГ±ГЁ Гў ГІГҐГ«ГҐГґГ®Г­Г­Г®Г© ГЄГ­ГЁГЈГҐ
 void PrintPhoneBookRec(PhBookRec_t& PhBookRec)
 {
     if (PhBookRec.por == 1) {
-        printf("\n\nname\t\t\t\t number\t\t\t\t\tn\n"); // Печатаем заголовок таблицы телефонной книги
+        printf("\n\nname\t\t\t\t number\t\t\t\t\tn\n"); // ГЏГҐГ·Г ГІГ ГҐГ¬ Г§Г ГЈГ®Г«Г®ГўГ®ГЄ ГІГ ГЎГ«ГЁГ¶Г» ГІГҐГ«ГҐГґГ®Г­Г­Г®Г© ГЄГ­ГЁГЈГЁ
     }
-    PrintPorNo(PhBookRec); // Вызываем функцию для печати порядкового номера
+    PrintPorNo(PhBookRec); // Г‚Г»Г§Г»ГўГ ГҐГ¬ ГґГіГ­ГЄГ¶ГЁГѕ Г¤Г«Гї ГЇГҐГ·Г ГІГЁ ГЇГ®Г°ГїГ¤ГЄГ®ГўГ®ГЈГ® Г­Г®Г¬ГҐГ°Г 
     printf("%s", PhBookRec.Nik);
-    string spaces((MY_STR_LEN - strlen(PhBookRec.Nik)), ' '); // Создаем строку пробелов, чтобы выровнять отображение имени
+    string spaces((MY_STR_LEN - strlen(PhBookRec.Nik)), ' '); // Г‘Г®Г§Г¤Г ГҐГ¬ Г±ГІГ°Г®ГЄГі ГЇГ°Г®ГЎГҐГ«Г®Гў, Г·ГІГ®ГЎГ» ГўГ»Г°Г®ГўГ­ГїГІГј Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ ГЁГ¬ГҐГ­ГЁ
     cout << spaces;
     PrintPhoneNo(&PhBookRec.Phone);
 }
-// Функция для ввода телефонного номера
+// Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГўГўГ®Г¤Г  ГІГҐГ«ГҐГґГ®Г­Г­Г®ГЈГ® Г­Г®Г¬ГҐГ°Г 
 int InPhoneNo(PhN_s* pPh)
 {
-    printf("Введите номер телефона\n");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®Г¬ГҐГ° ГІГҐГ«ГҐГґГ®Г­Г \n");
     char buf[MY_STR_LEN];
     scanf_s("%s", buf, MY_STR_LEN);
     if (CheckStr(buf, 13))
@@ -148,18 +148,18 @@ int InPhoneNo(PhN_s* pPh)
     return 0;
 
 }
-// Функция для ввода записи в телефонной книге
+// Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГўГўГ®Г¤Г  Г§Г ГЇГЁГ±ГЁ Гў ГІГҐГ«ГҐГґГ®Г­Г­Г®Г© ГЄГ­ГЁГЈГҐ
 int InPhoneRec(PhBookRec_t& PhBookRec)
 {
     int nRet = InPhoneNo(&PhBookRec.Phone);
     if (nRet)
         return nRet;
-    printf("Введите имя абонента\n");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї Г ГЎГ®Г­ГҐГ­ГІГ \n");
     scanf_s("%s", PhBookRec.Nik, MY_STR_LEN);
     return 0;
 }
 
-// Метод класса CPhN для печати телефонного номера
+// ГЊГҐГІГ®Г¤ ГЄГ«Г Г±Г±Г  CPhN Г¤Г«Гї ГЇГҐГ·Г ГІГЁ ГІГҐГ«ГҐГґГ®Г­Г­Г®ГЈГ® Г­Г®Г¬ГҐГ°Г 
 void CPhN::PrintPhoneNo(std::ofstream& MyFile)
 {
     PhN_s pPh(Number, Plus);
@@ -171,7 +171,7 @@ void CPhN::PrintPhoneNo(std::ofstream& MyFile)
     }
     ::PrintPhoneNo(&pPh);
 }
-// Метод класса CPhN для ввода телефонного номера
+// ГЊГҐГІГ®Г¤ ГЄГ«Г Г±Г±Г  CPhN Г¤Г«Гї ГўГўГ®Г¤Г  ГІГҐГ«ГҐГґГ®Г­Г­Г®ГЈГ® Г­Г®Г¬ГҐГ°Г 
 int CPhN::InPhoneNo()
 {
     PhN_s A;
@@ -181,11 +181,11 @@ int CPhN::InPhoneNo()
     return Ret;
     //return ::InPhoneNo((PhN_s *)this);
 }
-// метод вывода значений
+// Г¬ГҐГІГ®Г¤ ГўГ»ГўГ®Г¤Г  Г§Г­Г Г·ГҐГ­ГЁГ©
 void CPhR::write(size_t Len, int por, std::ofstream& MyFile)
 {
     if (por == 1) {
-        printf("\n\nn\tname\t\t\t\tnumber\n"); // Печатаем заголовок таблицы телефонной книги
+        printf("\n\nn\tname\t\t\t\tnumber\n"); // ГЏГҐГ·Г ГІГ ГҐГ¬ Г§Г ГЈГ®Г«Г®ГўГ®ГЄ ГІГ ГЎГ«ГЁГ¶Г» ГІГҐГ«ГҐГґГ®Г­Г­Г®Г© ГЄГ­ГЁГЈГЁ
         MyFile << "n\tname\t\tnumber\n";
     }
     std::cout << por << "\t";
@@ -195,16 +195,16 @@ void CPhR::write(size_t Len, int por, std::ofstream& MyFile)
     PrintPhoneNo(MyFile);
     MyFile << "\n";
 }
-//метод для записи
+//Г¬ГҐГІГ®Г¤ Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ
 void CPhR::read()
 {
     InPhoneNo();
-    std::cout << "Введите имя абонента\n"; // << std::endl;
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї Г ГЎГ®Г­ГҐГ­ГІГ \n"; // << std::endl;
     std::cin >> Nick;
 }
 int tr = 0;
 
-// функция для нахождения первого true
+// ГґГіГ­ГЄГ¶ГЁГї Г¤Г«Гї Г­Г ГµГ®Г¦Г¤ГҐГ­ГЁГї ГЇГҐГ°ГўГ®ГЈГ® true
 size_t FindMinTrue(std::vector<CPhR> Book) {
     for (size_t i = 0; i < Book.size(); i++) {
         tr++;
@@ -215,7 +215,7 @@ size_t FindMinTrue(std::vector<CPhR> Book) {
     }
     return limitUI;
 }
-//фукнция для нахождения индекса минимального значения
+//ГґГіГЄГ­Г¶ГЁГї Г¤Г«Гї Г­Г ГµГ®Г¦Г¤ГҐГ­ГЁГї ГЁГ­Г¤ГҐГЄГ±Г  Г¬ГЁГ­ГЁГ¬Г Г«ГјГ­Г®ГЈГ® Г§Г­Г Г·ГҐГ­ГЁГї
 size_t FindMin(std::vector<CPhR>& Book) {
     size_t i = FindMinTrue(Book);
     if (i == (limitUI)) {
@@ -233,7 +233,7 @@ size_t FindMin(std::vector<CPhR>& Book) {
     Book[i].OnOrOff = false;
     return i;
 }
-// функция простой сортировки
+// ГґГіГ­ГЄГ¶ГЁГї ГЇГ°Г®Г±ГІГ®Г© Г±Г®Г°ГІГЁГ°Г®ГўГЄГЁ
 std::vector<CPhR> SimpleSort(std::vector<CPhR>& Book) {
     size_t i = 0;
     std::vector<CPhR> newBook = {};
@@ -246,31 +246,29 @@ std::vector<CPhR> SimpleSort(std::vector<CPhR>& Book) {
         newBook.push_back(Book[minInd]);
         i += 1;
     }
-    cout << "\n количество шагов при простой сортировке = " << tr << "\n";
+    cout << "\n ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГёГ ГЈГ®Гў ГЇГ°ГЁ ГЇГ°Г®Г±ГІГ®Г© Г±Г®Г°ГІГЁГ°Г®ГўГЄГҐ = " << tr << "\n";
     return newBook;
 }
-//функция сортировки пузырьком
+//ГґГіГ­ГЄГ¶ГЁГї Г±Г®Г°ГІГЁГ°Г®ГўГЄГЁ ГЇГіГ§Г»Г°ГјГЄГ®Г¬
 void rightLeftSort(std::vector<CPhR>& Book) {
     size_t N = Book.size();
     CPhR glass;
     unsigned int tr = 0;
-    for (int i = 0; i < (N - 1); i++) {
-        for (int j = 0; j > N; j++) {
-            if (Book[j].Up() > Book[j - 1].Up()) {
-
+    for (int i = 0; i < N - 1; i++) {
+        for (int j = 0; j < N - i - 1; j++) {
+            if (Book[j].Up() > Book[j + 1].Up()) {
                 glass = Book[j];
-                Book[j] = Book[j - 1];
-                Book[j - 1] = glass;
+                Book[j] = Book[j + 1];
+                Book[j + 1] = glass;
                 tr++;
             }
-
         }
     }
-    cout << "\n количество шагов при сортировке пузырьком = " << tr << "\n";
+    cout << "\n РљРѕР»РёС‡РµСЃС‚РІРѕ РїРµСЂРµСЃС‚Р°РЅРѕРІРѕРє РґР»СЏ РїСЂР°РІРёР»СЊРЅРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё = " << tr << "\n";
 }
-std::string Up(std::string name) { // метод для возведения в верхний регистр
-    std::string NewNick = ""; // создаю новую строку для записи в нее
-    for (int i = 0; i < name.length(); i++) { // пробегаюсь по всему слову и добавляю посимвольно в новую строку символы в верхнем регистре
+std::string Up(std::string name) { // Г¬ГҐГІГ®Г¤ Г¤Г«Гї ГўГ®Г§ГўГҐГ¤ГҐГ­ГЁГї Гў ГўГҐГ°ГµГ­ГЁГ© Г°ГҐГЈГЁГ±ГІГ°
+    std::string NewNick = ""; // Г±Г®Г§Г¤Г Гѕ Г­Г®ГўГіГѕ Г±ГІГ°Г®ГЄГі Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ Гў Г­ГҐГҐ
+    for (int i = 0; i < name.length(); i++) { // ГЇГ°Г®ГЎГҐГЈГ ГѕГ±Гј ГЇГ® ГўГ±ГҐГ¬Гі Г±Г«Г®ГўГі ГЁ Г¤Г®ГЎГ ГўГ«ГїГѕ ГЇГ®Г±ГЁГ¬ГўГ®Г«ГјГ­Г® Гў Г­Г®ГўГіГѕ Г±ГІГ°Г®ГЄГі Г±ГЁГ¬ГўГ®Г«Г» Гў ГўГҐГ°ГµГ­ГҐГ¬ Г°ГҐГЈГЁГ±ГІГ°ГҐ
         NewNick += toupper(name[i]);
     }
     return NewNick;
